@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Lights Out</title>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+  </head>
+
+  <style>
+    body { background: #333366; }
+    div { text-align: center; }
+    input { display: none; }
+    h1 {
+      font-family: 'Lobster', cursive;
+      font-size: 72px;
+      color: #eeeeee;
+      text-shadow: 0 0 10px #dddddd;
+    }
+    p {
+      font-family: 'Roboto Condensed', sans-serif;
+      color: #eeeeee;
+      text-shadow: 0 0 3px #dddddd;
+    }
+    a:visited {
+      color: #aaaaaa;
+    }
+
+    #desc {
+      margin: 0 auto;
+      width: 400px;
+    }
+
+    hr {
+      border: none;
+      border-bottom: 1px solid #dddddd;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      border: 1px solid #dddddd;
+    }
+
+    td {
+      padding: 2px;
+      height: 60px;
+      perspective: 150px;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    input:checked + label {
+      background: #ddddaa;
+      z-index: 100;
+      -webkit-transition: transform 0.7s, background 0.7s, box-shadow 0.3s, height 0.2s, width 0.2s;
+      -webkit-box-shadow: inset 0 0 10px #ffffbb;
+      -webkit-box-shadow: 0 0 8px #ffffbb;
+    }
+
+    input + label {
+      width: 60px;
+      height: 60px;
+      background: #222244;
+      display: inline-block;
+      -webkit-transition: transform 0.7s, background 0.7s, box-shadow 1s, height 0.2s, width 0.2s;
+    }
+
+    input + label:hover {
+      width: 80%;
+      height: 80%;
+    }
+
+    .rotate {
+      -webkit-transform: rotateY(180deg);
+    }
+ </style>
+
+  <body>
+    <div id="board">
+      <h1 id="title">Lights Out</h1>
+      <p>Dimensions:  
+      <select id="sizes">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      </p>
+      <table></table>
+    </div>
+
+    <div id="desc">
+      <hr>
+
+      <p>Note: Every puzzle is solvable!</p>
+
+      <p>The objective of the game is to turn all lights off. Clicking any light toggles it and its neighbors (up to four) in the cardinal directions, up/down/left/right. This version of Lights Out is implemented with checkboxes for minimal JavaScript.</p>
+
+      <p>Made by <a href="http://mz496.github.io">Matthew Zhu</a>
+    </div>
+  </body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="checkout.js"></script>
+</html>
